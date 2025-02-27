@@ -4,9 +4,8 @@
  */
 package impuesto;
 
-import impuesto.controlador.Controlador;
-import impuesto.modelo.Modelo;
-import impuesto.vista.Vista;
+import impuesto.controladores.ControladorVehiculo;
+import impuesto.vistas.VistaVehiculo;
 
 /**
  *
@@ -18,12 +17,9 @@ public class Impuesto {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Modelo modelo = new Modelo();
-        Vista vista = new Vista();
+        VistaVehiculo vista = new VistaVehiculo();
         
-        Controlador ctrl = new Controlador(vista, modelo);
-        
-        ctrl.iniciar();
+        new ControladorVehiculo(vista);
         vista.setVisible(true);
     }
 }
