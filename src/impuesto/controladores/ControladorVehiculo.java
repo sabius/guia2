@@ -56,9 +56,10 @@ public class ControladorVehiculo {
             
             // Mostrar resultado en la vista
             vehiculo.mostrarInfo();
-            vista.textFieldResultado.setText("El impuesto calculado es: $" + impuesto);
+            vista.labelResultado.setText("El impuesto calculado es: ");
+            vista.textFieldResultado.setText("$" + impuesto);
         } catch (Exception ex) {
-            vista.textFieldResultado.setText("Error al procesar los datos. Verifique los valores ingresados.");
+            vista.labelResultado.setText("Error al procesar los datos. Verifique los valores ingresados.");
         }
     }
 }

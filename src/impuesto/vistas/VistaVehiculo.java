@@ -43,6 +43,7 @@ public class VistaVehiculo extends javax.swing.JFrame {
         textFieldCilindraje = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         comboBoxTipoDeUso = new javax.swing.JComboBox<>();
+        labelResultado = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -50,7 +51,6 @@ public class VistaVehiculo extends javax.swing.JFrame {
 
         jLabel1.setText("Marca");
 
-        textFieldMarca.setText("jTextField1");
         textFieldMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldMarcaActionPerformed(evt);
@@ -66,9 +66,6 @@ public class VistaVehiculo extends javax.swing.JFrame {
 
         jLabel2.setText("Avalúo Comercial");
 
-        textFieldAvaluo.setText("jTextField2");
-
-        textFieldResultado.setText("jTextField3");
         textFieldResultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldResultadoActionPerformed(evt);
@@ -77,7 +74,7 @@ public class VistaVehiculo extends javax.swing.JFrame {
 
         jLabel3.setText("Modelo");
 
-        textFieldModelo.setText("jTextField1");
+        textFieldModelo.setToolTipText("");
         textFieldModelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldModeloActionPerformed(evt);
@@ -86,7 +83,6 @@ public class VistaVehiculo extends javax.swing.JFrame {
 
         jLabel4.setText("Año de Fabricación");
 
-        textFieldAnioDeFabricacion.setText("jTextField1");
         textFieldAnioDeFabricacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldAnioDeFabricacionActionPerformed(evt);
@@ -95,7 +91,11 @@ public class VistaVehiculo extends javax.swing.JFrame {
 
         jLabel5.setText("Cilindraje");
 
-        textFieldCilindraje.setText("jTextField1");
+        textFieldCilindraje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldCilindrajeActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Tipo de Uso");
 
@@ -105,6 +105,8 @@ public class VistaVehiculo extends javax.swing.JFrame {
                 comboBoxTipoDeUsoActionPerformed(evt);
             }
         });
+
+        labelResultado.setText("-");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,35 +119,35 @@ public class VistaVehiculo extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textFieldAvaluo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboBoxTipoDeUso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4)
                             .addComponent(btnCalcular)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(textFieldCilindraje)
+                                    .addComponent(textFieldAnioDeFabricacion, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textFieldModelo, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textFieldMarca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel6)))
+                            .addComponent(labelResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textFieldAnioDeFabricacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textFieldCilindraje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(textFieldMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(textFieldModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel2))))
-                                .addContainerGap(154, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(textFieldResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(12, Short.MAX_VALUE))))))
+                                    .addComponent(comboBoxTipoDeUso, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textFieldAvaluo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(textFieldResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(31, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,6 +175,7 @@ public class VistaVehiculo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCalcular)
+                    .addComponent(labelResultado)
                     .addComponent(textFieldResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60))
         );
@@ -203,6 +206,10 @@ public class VistaVehiculo extends javax.swing.JFrame {
     private void textFieldResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldResultadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldResultadoActionPerformed
+
+    private void textFieldCilindrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCilindrajeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldCilindrajeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,6 +261,7 @@ public class VistaVehiculo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel labelResultado;
     public javax.swing.JTextField textFieldAnioDeFabricacion;
     public javax.swing.JTextField textFieldAvaluo;
     public javax.swing.JTextField textFieldCilindraje;
